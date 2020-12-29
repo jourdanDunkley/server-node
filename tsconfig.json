@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "sourceMap": true,
+    "target": "ES2019",
+    "outDir": "./dist",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2018",
+      "esnext.asynciterable"
+    ],
+    "paths": {
+      "@bootstrap/*": [
+        "bootstrap/*"
+      ],
+      "@common/*": [
+        "common/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@resolvers/*": [
+        "resolvers/*"
+      ],
+      "@entities/*": [
+        "entities/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*.ts"
+  ]
+}

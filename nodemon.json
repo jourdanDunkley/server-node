@@ -1,0 +1,8 @@
+{
+    "ext": "js",
+    "delay": "2000",
+    "verbose": false,
+    "watch": ["./dist/index.js"],
+    "args": ["--inspect=0.0.0.0:5858", "--nolazy"]
+}
+  

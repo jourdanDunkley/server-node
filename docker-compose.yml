@@ -1,0 +1,39 @@
+version: '2.4'
+
+services:
+  server_test:
+    build:
+      context: ./ 
+    command: npm run start:dev
+    ports: 
+      - 4000:4000
+    environment:
+      DB_USERNAME: admin
+      DB_PASSWORD: password
+      DB_NAME: server-test
+      DB_HOST: postgres
+    networks:
+      - server
+    volumes:
+      - ./:/app
+      - exclude:/app/node_modules
+    depends_on: 
+      - postgres 
+  postgres:
+    image: postgres:12.3
+    environment: 
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: server-test
+    ports: 
+      - 5432:5432
+    networks:
+      - server
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+networks:
+  server:
+volumes:
+  pgdata:
+  exclude:
+
